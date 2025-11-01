@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello from Flask on AWS Elastic Beanstalk!"
+    return "hogyi bhai deploy app benstalk se got it"
 
 @app.route('/about')
 def about():
