@@ -3,7 +3,8 @@ name: Deploy Flask App to Elastic Beanstalk
 on:
   push:
     branches:
-      - main  # jab tu main branch pe push karega tab ye chalega
+      - main
+      - master # jab tu main branch pe push karega tab ye chalega
 
 jobs:
   deploy:
