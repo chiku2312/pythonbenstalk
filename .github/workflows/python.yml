@@ -24,15 +24,15 @@ jobs:
           pip install -r requirements.txt
 
       - name: Zip application for deployment
-        run: zip -r flask-app.zip . -x "*.git*"
+        run: zip -r pythonbenstalk.zip . -x "*.git*"
 
       - name: Deploy to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: flask-beanstalk          # AWS Beanstalk app ka naam
-          environment_name: flask-beanstalk-env      # Beanstalk environment ka naam
+          application_name: Pythonnahta          # AWS Beanstalk app ka naam
+          environment_name: Pythonnahta-env      # Beanstalk environment ka naam
           region: us-east-1                          # tu jis region me bana raha hai
           version_label: github-${{ github.run_number }}
-          deployment_package: flask-app.zip
+          deployment_package: pythonbenstalk.zip
